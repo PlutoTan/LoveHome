@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
+            android:textColor="#53c67a"
             android:id="@+id/util_textview_1"
             android:text="爱家乡"/>
     </LinearLayout>

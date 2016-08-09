@@ -1,8 +1,7 @@
 package com.example.lovehome;
 
 
-import android.app.Activity;
-import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -14,11 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.homepage.Homepage;
-import com.example.homepage.HomepageActivity;
 import com.example.lovehome.fragment.Home;
-import com.example.mine.Mine;
-import com.example.release.Release;
 
 import java.util.ArrayList;
 
@@ -59,7 +54,12 @@ public class MainActivity extends FragmentActivity {
                 // TODO Auto-generated method stub
                 FragmentTransaction ft = fa.beginTransaction();
                 Home ff = new Home();
-
+                ImageView_2.setImageResource(R.drawable.publish);
+                ImageView_3.setImageResource(R.drawable.wode);
+                ImageView_1.setImageResource(R.drawable.home_press);
+                textView_1.setTextColor(Color.parseColor("#53c67a"));
+                textView_2.setTextColor(Color.parseColor("#e8e8e8"));
+                textView_3.setTextColor(Color.parseColor("#e8e8e8"));
                 ft.replace(R.id.Fragment_layout, ff);
                 ft.commit();
             }
@@ -69,6 +69,12 @@ public class MainActivity extends FragmentActivity {
             public void onClick(View arg0) {
                 FragmentTransaction ft = fa.beginTransaction();
                 com.example.lovehome.fragment.Release ff = new com.example.lovehome.fragment.Release();
+                ImageView_1.setImageResource(R.drawable.home);
+                ImageView_2.setImageResource(R.drawable.publish_press);
+                ImageView_3.setImageResource(R.drawable.wode);
+                textView_1.setTextColor(Color.parseColor("#e8e8e8"));
+                textView_2.setTextColor(Color.parseColor("#53c67a"));
+                textView_3.setTextColor(Color.parseColor("#e8e8e8"));
                 ft.replace(R.id.Fragment_layout, ff);
                 ft.commit();
 
@@ -79,6 +85,12 @@ public class MainActivity extends FragmentActivity {
             public void onClick(View arg0) {
                 FragmentTransaction ft = fa.beginTransaction();
                 com.example.lovehome.fragment.Mine ff = new com.example.lovehome.fragment.Mine();
+                ImageView_1.setImageResource(R.drawable.home);
+                ImageView_2.setImageResource(R.drawable.publish);
+                ImageView_3.setImageResource(R.drawable.wode_press);
+                textView_1.setTextColor(Color.parseColor("#e8e8e8"));
+                textView_2.setTextColor(Color.parseColor("#e8e8e8"));
+                textView_3.setTextColor(Color.parseColor("#53c67a"));
                 ft.replace(R.id.Fragment_layout, ff);
                 ft.commit();
 
