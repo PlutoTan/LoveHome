@@ -9,10 +9,11 @@ import android.view.ViewGroup;
 
 import com.example.lovehome.R;
 
-public class Release extends Fragment {
-    @Nullable
-    @Override
+/**
+ * Created by tanyang on 2016/8/9.
+ */
+public class Release extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.release_layout,null);
+        return inflater.inflate(R.layout.releasefragment,null);
     }
 }
