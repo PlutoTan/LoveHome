@@ -5,11 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:id="@+id/framelayput"></FrameLayout>
 
-    <include layout="@layout/tab"></include>
+
+<include layout="@layout/table"></include>
+
 </LinearLayout>
