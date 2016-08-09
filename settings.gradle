@@ -1,1 +1,1 @@
-include ':app', ':homepage', ':particulars', ':particulars', ':register', ':release', ':usermanagement'
+include ':app', ':homepage', ':particulars', ':particulars', ':register', ':release', ':usermanagement', ':library'
