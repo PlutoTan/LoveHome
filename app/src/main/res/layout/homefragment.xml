@@ -1,10 +1,150 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-<TextView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="home"/>
+    android:layout_height="100dp"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/ww20"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/home_pop_layout"
+            android:clickable="true"
+            android:orientation="horizontal">
+        <TextView
+            android:id="@+id/home_pop_text_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12sp"
+            android:text="湛江"
+            android:textColor="#ffffff"
+            android:textSize="30dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25sp"
+            android:src="@drawable/buttom_icon" />
+        </LinearLayout>
+        <ImageView
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/search_bg" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="-315dp"
+            android:layout_marginTop="20sp"
+            android:src="@drawable/search" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:layout_weight="1"
+            android:text=" 查找商户"
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginLeft="-180dp"
+            android:layout_weight="1"
+            android:src="@drawable/img_my_fragment_msg_left" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/home_viewpage_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </android.support.v4.view.ViewPager>
+            -
+
+            <LinearLayout
+                android:id="@+id/dots_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginRight="5dp"
+                    android:id="@+id/dian_1"
+                    android:src="@drawable/hen_point" />
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:id="@+id/dian_2"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/hen_point" />
+            </LinearLayout>
+
+           <android.support.v4.view.ViewPager
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/home_viewpage_2">
+            </android.support.v4.view.ViewPager>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginRight="5dp"
+                    android:id="@+id/dian_3"
+                    android:src="@drawable/green_point" />
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:id="@+id/dian_4"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/hen_point" />
+            </LinearLayout>
+            <!-- 老乡会和外卖汇-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="- 老乡会和外卖汇--"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#a19999"
+                android:text="老乡推荐"/>
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/home_choose_listview"
+                android:layout_weight="1">
+            </ListView>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
+
