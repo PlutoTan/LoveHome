@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:background="#FFFFFF"
+    android:layout_height="match_parent"
+    android:background="#a19999"
     android:orientation="vertical">
 
     <LinearLayout
@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12sp"
             android:text="湛江"
+            android:clickable="true"
             android:textColor="#ffffff"
             android:textSize="30dp" />
 
@@ -28,10 +29,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25sp"
+            android:id="@+id/home_pop_imagebutton"
             android:src="@drawable/buttom_icon" />
         </LinearLayout>
         <ImageView
-            android:layout_width="320dp"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
             android:src="@drawable/search_bg" />
 
@@ -66,73 +68,127 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="fill_parent"
             android:orientation="vertical">
 
-            <android.support.v4.view.ViewPager
-                android:id="@+id/home_viewpage_1"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </android.support.v4.view.ViewPager>
-            -
-
-            <LinearLayout
-                android:id="@+id/dots_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="10dp"
-                    android:layout_height="10dp"
-                    android:layout_marginRight="5dp"
-                    android:id="@+id/dian_1"
-                    android:src="@drawable/hen_point" />
-
-                <ImageView
-                    android:layout_width="10dp"
-                    android:layout_height="10dp"
-                    android:id="@+id/dian_2"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/hen_point" />
-            </LinearLayout>
+                android:id="@+id/Fragment_layout_1"
+                android:background="#ffffff"
+                android:layout_height="180dp">
+            </FrameLayout>
 
            <android.support.v4.view.ViewPager
                android:layout_width="match_parent"
-               android:layout_height="wrap_content"
+               android:layout_height="140dp"
+               android:background="#ffffff"
                android:id="@+id/home_viewpage_2">
             </android.support.v4.view.ViewPager>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="#ffffff"
                 android:layout_height="wrap_content">
                 <ImageView
                     android:layout_width="10dp"
                     android:layout_height="10dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
                     android:id="@+id/dian_3"
                     android:src="@drawable/green_point" />
 
                 <ImageView
                     android:layout_width="10dp"
                     android:layout_height="10dp"
+                    android:layout_gravity="center"
                     android:id="@+id/dian_4"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginRight="10dp"
                     android:src="@drawable/hen_point" />
             </LinearLayout>
+
             <!-- 老乡会和外卖汇-->
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="- 老乡会和外卖汇--"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:layout_marginRight="2dp"
+                    android:layout_height="wrap_content"
+                    >
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:text="老乡会"
+                            android:textColor="#6666ff"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:text="通向异城，互帮互助"
+                            />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="101dp"
+                        android:layout_height="66dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/ww17"
+                        android:id="@+id/imageView" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:layout_height="wrap_content"
+                    >
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:textColor="#ff9900"
+                            android:text="外卖汇"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:text="一个电话，马上到家"
+                            />
+
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="101dp"
+                        android:layout_height="66dp"
+                        android:layout_weight="1"
+                          android:src="@drawable/ww18"
+                        />
+                </LinearLayout>
             </LinearLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -140,10 +196,11 @@
                 android:text="老乡推荐"/>
             <ListView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/home_choose_listview"
-                android:layout_weight="1">
+                >
             </ListView>
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -34,5 +34,6 @@ public class Http {
      public static final String  checkcode_interface=Main_interface+"/checkCode";
      //忘记密码
      public static final String forgetPwd_interface=Main_interface+"/forgetPwd";
-
+     //获得商品详情
+     public static final String Product="http://123.206.87.139/LoveHomeTownServer/detailInfo?is_approve=1";
 }
