@@ -8,12 +8,15 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.PopupWindow;
 
 import com.example.library.entitypackage.Entity;
@@ -21,8 +24,10 @@ import com.example.library.httppackage.Http;
 import com.example.library.httppackage.Item_http_library;
 import com.example.library.jsonpackage.Json;
 import com.example.lovehome.R;
+import com.example.lovehome.adapterpackage.Home_Product_adapter;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -35,26 +40,59 @@ import cz.msebera.android.httpclient.Header;
 public class Home extends Fragment{
     private PopupWindow popupWindow;
     private FragmentManager fa;
-
+   ListView listView;
     ImageView af;
     public static ViewPager viewPager, viewPager1;
     public static   ArrayList<Fragment> a=new ArrayList();
     ImageView dian_3,dian_4;
     private ArrayList<Entity> home_Product_array =new ArrayList<>();
     LinearLayout home_pop_layout;
+    Home_Product_adapter home_product_adapter;
    //控件实现
     public void view(){
-         fa=getChildFragmentManager();
+
+        fa=getChildFragmentManager();
         FragmentTransaction ft=fa.beginTransaction();
-        HomepageFragment homepageFragment=new HomepageFragment();
-        ft.add(R.id.Fragment_layout_1,homepageFragment);
+
         ft.commit();
     }
 
+    /**
+     * 重新计算ListView的高度，解决ScrollView和ListView两个View都有滚动的效果，在嵌套使用时起冲突的问题
+     * @param listView
+     */
+    public void setListViewHeight(ListView listView) {
+
+        // 获取ListView对应的Adapter
+
+        ListAdapter listAdapter = listView.getAdapter();
+
+        if (listAdapter == null) {
+            return;
+        }
+        int totalHeight = 0;
+        for (int i = 0, len = listAdapter.getCount(); i < len; i++) { // listAdapter.getCount()返回数据项的数目
+            View listItem = listAdapter.getView(i, null, listView);
+            listItem.measure(0, 0); // 计算子项View 的宽高
+            totalHeight += listItem.getMeasuredHeight(); // 统计所有子项的总高度
+        }
+
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        listView.setLayoutParams(params);
+    }
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        listView=(ListView) getActivity().findViewById(R.id.home_choose_listview);
+
         view();
+        Log.e("Tag","大小xiaoxiaoi");
+
+        Product();
+        home_product_adapter =new Home_Product_adapter(getActivity(),home_Product_array);
+        listView.setAdapter(home_product_adapter);
+
         home_pop_layout=(LinearLayout)getActivity().findViewById(R.id.home_pop_layout);
         home_pop_layout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,17 +149,29 @@ public class Home extends Fragment{
         dian_4.setTag("1");
     }
     public void Product(){
+        Log.e("Tag","大小");
         Item_http_library a=new Item_http_library();
         a.http_item_home(new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
+                Log.e("Tag","sshhshshshshs");
               if (statusCode==200){
                   ArrayList<Entity> product= Json.home_listview_json(response);
+                  Log.e("Tag",product.size()+"大小");
                   home_Product_array.clear();
                   home_Product_array.addAll(product);
-
+                  Log.e("tag","有没有"+home_Product_array.get(1).getImgUrlList().get(0).getImg_url().toString());
+                  Log.e("yyyy","donxi"+home_Product_array.toString());
+                  setListViewHeight(listView);
+                  Log.e("tag","有youyouy没有"+home_Product_array.get(1).getImgUrlList().get(0).getImg_url().toString());
+                  home_product_adapter.notifyDataSetChanged();
               }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         });
 

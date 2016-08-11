@@ -1,5 +1,7 @@
 package com.example.library.entitypackage;
 
+import java.util.List;
+
 /**
  * Created by tanyang on 2016/8/10.
  */
@@ -11,6 +13,7 @@ public class Entity {
     public String contact;
     public String detail_id;
     public String detail_info;
+    public List<entity_image> imgUrlList;
     public String isApprove;
     public String is_take_out;
     public String measure_unit;
@@ -27,6 +30,14 @@ public class Entity {
 
     public void setBusiness_location(String business_location) {
         this.business_location = business_location;
+    }
+
+    public List<entity_image> getImgUrlList() {
+        return imgUrlList;
+    }
+
+    public void setImgUrlList(List<entity_image> imgUrlList) {
+        this.imgUrlList = imgUrlList;
     }
 
     public String getUser_id() {
