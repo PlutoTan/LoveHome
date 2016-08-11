@@ -19,6 +19,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 
+import com.example.homepage.fragemtpackage.Home_lunbo_Fragemt;
 import com.example.library.entitypackage.Entity;
 import com.example.library.httppackage.Http;
 import com.example.library.httppackage.Item_http_library;
@@ -53,7 +54,8 @@ public class Home extends Fragment{
 
         fa=getChildFragmentManager();
         FragmentTransaction ft=fa.beginTransaction();
-
+        Home_lunbo_Fragemt home_lunbo_fragemt=new Home_lunbo_Fragemt();
+        ft.add(R.id.home_Fragment_lunbo_layout_1,home_lunbo_fragemt);
         ft.commit();
     }
 
