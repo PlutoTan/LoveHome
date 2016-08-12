@@ -3,6 +3,7 @@ package com.example.library.jsonpackage;
 import android.util.Log;
 
 import com.example.library.entitypackage.City_name;
+import com.example.library.entitypackage.ClassifyONE;
 import com.example.library.entitypackage.Entity;
 import com.example.library.httppackage.Item_http_library;
 import com.google.gson.Gson;
@@ -51,5 +52,20 @@ public class Json {
         }catch (Exception e){e.printStackTrace();}
         return  city_names_array;
     }
+    public static  ArrayList<ClassifyONE> classifyONEs(JSONObject jsonObject){
+        ArrayList<ClassifyONE> classifyONEs=null;
+        try{
+            Log.e("tag","545555555afafaf");
+            String s=jsonObject.getString("msg");
 
+            if(s.equals("success")){
+                String a=jsonObject.getString("list");
+                Log.e("tag","54999977777777fafaf"+a);
+                Gson gson=new Gson();
+                classifyONEs=gson.fromJson(a,new TypeToken<ArrayList<ClassifyONE>>(){}.getType());
+                Log.e("tag","549999999955afafaf");
+            }
+        }catch (Exception e){e.printStackTrace();}
+        return  classifyONEs;
+    }
 }

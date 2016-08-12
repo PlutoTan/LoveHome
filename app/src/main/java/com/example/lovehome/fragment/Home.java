@@ -54,8 +54,8 @@ public class Home extends Fragment {
     private ArrayList<Entity> home_Product_array = new ArrayList<>();
     ArrayList<City_name> home_cityname_array=new ArrayList<>();
     LinearLayout home_pop_layout;
+    private static ArrayList  lunbo=new ArrayList();
     TextView  home_pop_text,home_pop_city_adapter_text;
-
     Home_Product_adapter home_product_adapter;
 
     //控件实现
@@ -234,7 +234,7 @@ public class Home extends Fragment {
         });
 
     }
-    //
+    //商品列表
     public void Product() {
         Log.e("Tag", "大小");
         Item_http_library a = new Item_http_library();

@@ -3,9 +3,10 @@
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="100dp">
     <ImageView
-        android:layout_width="180px"
+        android:layout_width="140px"
         android:layout_height="100px"
         android:layout_marginTop="0dp"
+        android:layerType="hardware"
         android:id="@+id/adapter_imageview"
         android:layout_marginLeft="-32dp"
         />

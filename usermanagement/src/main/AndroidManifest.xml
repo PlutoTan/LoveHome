@@ -1,10 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.usermanagement">
 
     <application
         android:allowBackup="true"
         android:label="@string/app_name"
-        android:supportsRtl="true">
+        android:supportsRtl="true"
+        android:name="com.example.userApplication"
+        >
+
+        <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <activity android:name="com.example.Mine_login"/>
+            <activity android:name="com.example.Mine_publishp"/>
+            <activity android:name="com.example.User_login2"/>
+
 
     </application>
 

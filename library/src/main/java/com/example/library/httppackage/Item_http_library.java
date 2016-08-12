@@ -10,10 +10,11 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 public class Item_http_library {
     private  static String result="";
     private AsyncHttpClient client;
-    private AsyncHttpClient client2;
+    private AsyncHttpClient client2,client3;
     public Item_http_library() {
        client=new AsyncHttpClient();
         client2=new AsyncHttpClient();
+        client3=new AsyncHttpClient();
     }
     public  void  http_item_home (JsonHttpResponseHandler handler){
         try {
@@ -27,6 +28,12 @@ public class Item_http_library {
             String url=Http.city_interface;
             client2.get(url,handler);
             Log.e("tag","数据545555555afafaf"+url);
+        }catch (Exception e){e.printStackTrace();}
+    }
+    public  void http_classify(JsonHttpResponseHandler handler){
+        try{
+            String a=Http.superclass_interface;
+            client3.get(a,handler);
         }catch (Exception e){e.printStackTrace();}
     }
 }
