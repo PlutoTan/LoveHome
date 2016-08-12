@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class Home_lunbo_Fragemt extends Fragment{
     ViewPager viewPager;
     private int pageNumber;
-    int [] home_lunbo_image_droweba={ R.drawable.lunbo_1,R.drawable.lunbo_2,R.drawable.lunbo_1,R.drawable.lunbo_2};
+    int [] home_lunbo_image_droweba={ R.drawable.lunbo1,R.drawable.lunbo2,R.drawable.lunbo3,R.drawable.lunbo4,R.drawable.lunbo5};
     ArrayList<View> home_lunbo_image_array=new ArrayList<>();
     ArrayList<ImageView> home_lunbo_diandian_array=new ArrayList<>();
     Handler handler=new Handler(){
@@ -83,7 +83,7 @@ public class Home_lunbo_Fragemt extends Fragment{
         });
         LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(20,20);
        LinearLayout diandian=(LinearLayout)getActivity().findViewById(R.id.home_lunbo_fargent_diandian_layout);
-        for(int i=0;i<=home_lunbo_image_array.size();i++){
+        for(int i=0;i<home_lunbo_image_array.size();i++){
             ImageView dian=new ImageView(getActivity());
             lp.leftMargin=10;
             dian.setLayoutParams(lp);

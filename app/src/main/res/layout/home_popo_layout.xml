@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
- <TextView
-     android:layout_width="match_parent"
-     android:layout_height="match_parent"
-     android:text="你好你好"/>
+    android:orientation="vertical" android:layout_width="100dp"
+    android:background="#e8e8e8"
+    android:layout_height="100dp">
+ <ListView
+     android:layout_width="100dp"
+     android:background="#00ff00"
+     android:layout_height="100dp"
+     android:id="@+id/POP_cityname">
+ </ListView>
 </LinearLayout>
